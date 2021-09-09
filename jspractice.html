@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <script>
+      /*  function greet(name) {
+          if (name === "craig") {
+            console.log("Hello craig");
+          } else if (name === "may") {
+            console.log("you are may, right?");
+          } else {
+            console.log("nobody here");
+          }
+        }
+       
+       let name = "may";
+        greet(name);
+        greet("may");
+        greet("ran");  */
+
+        function greeting(name){
+           /* return "Hello";*/
+              return name;
+        }
+
+        /* To get a value from a function, we use return */
+
+        greeting();
+
+        /* However the value of the function doesnt display directly as above
+        thus, we have to assign it to a variable first before we can use or see it.*/
+
+      /* let message = greeting("may");
+
+        console.log(message); */
+/* A better way to create a function , return and use it dynamically
+by passing the variable into the bracket after calling the unction*/
+
+        /*function greet (name) {
+            let result = "";
+            if (name === "craig") {
+            result = "Hello craig";
+          } else if (name === "may") {
+            result = "you are may, right?";
+          } else {
+            result = "nobody here";
+          }
+          return result;
+        }
+
+        let message1 = greet("f");
+
+         console.log(message1); */
+
+/* Creating objects. Objects are ment to be able to group variables
+and functions*/
+      
+      /* Object Literals*/
+
+      let firstName = "craig";
+      let lastName = "shoemaker";
+      let twitter = "@craigshoemaker";
+
+      /* to turn this to an object i will use the following*/
+
+     /* let person = {};*/
+
+      /* by using the curly braces {} javascript knows this is
+      an object, differentiating it from a simple variable*/
+
+      let person = {
+          firstName: "craig",
+          lastName: "shoemaker",
+          twitter: "@craigshoemaker",
+          greet: function() {
+              console.log("My name is " + this.firstName)
+          }
+      };
+/* when adding variables to an object the variable (the right word is property not variable) values are
+preceeded by a column and seperated by a comma
+
+For a function to be added to the object the above example
+shows how. For the function in an object to make use of other
+properties within the object, the 'this' keyword is used.*/
+         console.log(person);
+
+/* to target the different property within the object, we use
+dot notation e.g person.lastName to taget lastName in the person 
+object and so on*/         
+        console.log(person.twitter);
+
+        /* To call the function in an object*/
+
+        person.greet();
+
+        /* Arrays*/
+
+        let array = [];
+
+ /* when declaring an array this [] brackets are used*/ 
+
+ let array2 = [1,2,3,4];      
+ console.log(array2);
+ 
+ let array3 = ["may","jan","lily","son"];      
+ console.log(array3);
+
+ let array4 = ["may",true,3];      
+ console.log(array4);
+
+
+ /* List in an array are seperated by comma, it can house
+ numbers and strings or a mixture of different type of data
+ (true here is a boolean value)
+ Data within an array can be identiied by its indexing number.
+ The first item in an array is index 0 the next is 1 and the
+ third 2 and so on. To access a data using its index number
+ can be done as follows*/
+
+ console.log(array4[0]);
+
+/* In the example above, we return the value of the first data
+ in the array which is "may"*/
+
+/* we can reverse the arrangement ofdata in the array*/
+
+console.log(array4.reverse());
+
+/* we can get the number of items in the array*/
+
+console.log(array4.length);
+
+/* we can add stuff to the array*/
+
+console.log(array4.push("new item"));
+
+/* once this is done it logs out the new legnth in the console*/
+
+console.log(array4.length);
+
+console.log(array4);
+
+/* working with a loop e.g counting 0 - 10 */
+let count = 0;
+let max = 10;
+/* while counting you want your count to be less than max.
+we can use while. while takes an expression i.e while()
+as long as what is inside the expression returns true the loop 
+will continue, by keeping executing the block of expression
+under the keyword 'while' */
+while(count < max) {
+  console.log(count);
+  count = count + 1;
+}
+
+/*the while loop is less used compared to the for loop.
+the for loop is much compact i++ is a shorthand for i = i +1
+the let i = 0 the zero ther is for indexing i,e where to start*/
+
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
+
+let numbers = [1,2,3];
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+
+/* double bracket notation is used in other to get the specific
+  data/value inside an array to be displayed i.e (numbers[i])*/
+
+  let numbers1 = [true,200,"Hello"];
+
+for (let i = 0; i < numbers1.length; i++) {
+  console.log(numbers1[i]);
+}
+
+/*arrays have a function called forEach in javascript which is
+a loop which iteriate each item in an array one by one and
+the syntax is easier than a while or for loop.
+foreach is a function that takes a function i.e forEach()
+it can take a function that has no name i.e anonymous function
+forEach(function())
+forEach will now pass values as arguments into the anonymous
+ function which is the data for each item on the list and
+  index number i.e forEach(function(day, index))*/
+
+
+  let days = ["Mon", "Tue", "Wed"];
+
+  days.forEach(function(day,index) {
+    console.log(`day: ${day}, index: ${index}`)
+  });
+
+  /* when working with strings we can use the back tik `` to
+  create nice template strings which are templates of strings
+  mixed with variables/arguments*/
+    </script>
+
+    <!-- Using javascript for web page interactivity --> 
+
+    <section id="craig-shoemaker" class="card">
+      <h1>Craig Shoemaker</h1>
+      <ul>
+        <li><a href="https://twitter.com/craigshoemaker" class="tag">Twitter</a></li>
+        <li><a href="https://github.com/craigshoemaker">GitHub</a></li>
+      </ul>
+    </section>
+
+    <section id="john-papa" class="card">
+      <h1>John Papa</h1>
+      <ul>
+        <li><a href="https://twitter.com/john_papa" class="tag">Twitter</a></li>
+        <li><a href="https://github.com/johnpapa">GitHub</a></li>
+      </ul>
+    </section>
+
+    <script>
+      document.getElementById("craig-shoemaker");
+      /* to get an element by its id*/
+
+       document.querySelector(".card");
+
+      /* to get an element by its class*/
+
+      document.querySelector(".card");
+
+      /* to get all elements with the class card*/
+      /* to look or query specific elements e.g an anchor tag
+      with an attribute href of https://twitter.com/craigshoemaker */
+
+      document.querySelector("a[href='https://twitter.com/craigshoemaker']");
+    
+    /* anytime you need to use a quotation inside a quotation, you can
+    use single quotes inside double quotes or use double quotes 
+    inside single quotes*/
+
+    /* once you have selected an element you can do many things
+    e.g changing its attributes*/
+
+    let links = document.querySelectorAll(".tag");
+    links.forEach(function(link){
+      link.setAttribute("target","_blank");
+    });
+
+    /*foreach used here will not return array but rather a 
+    note list. link here holds the value of links found
+    in the class "tag" the setAttribute is used to assign new
+    attributes to elements or update attribute value of an element. the attributes target _blank will
+    open links in a new tab*/
+
+    /* we can get the value of an attribute by using the 
+    getAttribute function */
+       
+    /* using the console*/
+
+   /* $0.getAttribute("target");  returns '_blank' */
+   /* $0.getAttribute("href");    returns 'https://twitter.com/craigshoemaker' */
+   
+
+   /* we can also remove an attribute using te remove Attribute function*/
+
+   /*$0.removeAttribute("target"); will remove the attribute
+   "target that we added earlier using setAttribute function"*/
+    </script>
+</body>
+</html>
